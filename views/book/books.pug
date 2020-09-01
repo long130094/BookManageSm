@@ -1,0 +1,11 @@
+h1 Books store
+p   List of books
+ul
+    each book in books
+        li 
+            span=book.title 
+            a(href="/books/" +book.id style="text-decoration: none")  &nbsp Update 
+            a(href="/books/" +book.id +"/delete" style="text-decoration: none") &nbsp Delete 
+
+a(href="/books/create") 
+    button Create New
