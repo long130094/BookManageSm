@@ -10,7 +10,7 @@ const shortid = require('shortid')
 // PUG
 app.set('view engine', 'pug');
 //Use to read file JSON
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 // app.set('views', './views')
 //use lowDB
 const low = require('lowdb')
