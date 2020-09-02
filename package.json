@@ -10,9 +10,12 @@
     "pug": "^3.0.0",
     "shortid": "^2.2.15"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1" ,
+    "start": "nodemon book.js"
   },
   "author": "",
   "license": "ISC"
