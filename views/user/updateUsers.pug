@@ -1,0 +1,14 @@
+h1 Update User
+
+p(Style="color:red") Old Information:  
+span= user.name
+br
+p age &nbsp
+    span= user.age
+
+form(action="/users/"+ user.id +"/update", method="post")
+    label New Name  &nbsp;
+    input(type="text", name="name") 
+    label New Age &nbsp;
+    input(type="text", name="age") 
+    button  &nbsp; UPDATE

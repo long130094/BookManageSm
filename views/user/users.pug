@@ -1,4 +1,12 @@
-h1 List of  customers
-ul
+h1 List of Member
+ul 
     each user in users
-        li= user.name
+        li
+            span= user.name 
+
+            a(href="/users/" +user.id  style="text-decoration: none") &nbsp; Update &nbsp;
+            a(href="/users/" +user.id +"/delete" style="text-decoration: none") Delete
+
+p Register new member ( click a button)
+a(href="/users/create")
+    button Register
