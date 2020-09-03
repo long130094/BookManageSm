@@ -1,4 +1,68 @@
 {
-  "Books": [],
-  "users": []
+  "Books": [
+    {
+      "title": "Mafia",
+      "des": "asdasd",
+      "id": "lLiq1PtHA"
+    },
+    {
+      "title": "adjoad",
+      "des": "A mafia has money, weapon",
+      "id": "CwKmihgNY"
+    },
+    {
+      "title": "ad",
+      "des": "Toi khong biet code",
+      "id": "KKT-bXNoy"
+    }
+  ],
+  "users": [
+    {
+      "name": "Long",
+      "age": "13",
+      "id": "RWmjDdimp"
+    }
+  ],
+  "collection": [
+    {
+      "bookID": "lLiq1PtHA",
+      "userID": "RWmjDdimp",
+      "id": "0V37STzZN"
+    },
+    {
+      "bookID": "lLiq1PtHA",
+      "userID": "RWmjDdimp",
+      "id": "gYDLy4sD2"
+    },
+    {
+      "bookID": "CwKmihgNY",
+      "userID": "RWmjDdimp",
+      "id": "m4WUKn1MU"
+    },
+    {
+      "bookID": "KKT-bXNoy",
+      "userID": "RWmjDdimp",
+      "id": "cab1XuUzG"
+    },
+    {
+      "bookID": "lLiq1PtHA",
+      "userID": "RWmjDdimp",
+      "id": "7XnkSSV3N"
+    },
+    {
+      "bookID": "lLiq1PtHA",
+      "userID": "RWmjDdimp",
+      "id": "sSXr8TqeJ"
+    },
+    {
+      "bookID": "KKT-bXNoy",
+      "userID": "RWmjDdimp",
+      "id": "XP5wcH2WB"
+    },
+    {
+      "bookID": "CwKmihgNY",
+      "userID": "RWmjDdimp",
+      "id": "z6bm5Wd5g"
+    }
+  ]
 }
