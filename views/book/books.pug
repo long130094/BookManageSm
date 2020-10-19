@@ -1,13 +1,16 @@
-h1 Books store
-p   List of books
-ul
-    each book in books
-        li 
-            span=book.title 
-            a(href="/books/" +book.id style="text-decoration: none")  &nbsp Update 
-            a(href="/books/" +book.id +"/delete" style="text-decoration: none") &nbsp Delete 
+extends ../Home.pug
 
-a(href="/books/create") 
-    button Create New
-a(href="/")
-    button Home
+block content
+    h1 Books store
+    p   List of books
+    ul
+        each book in books
+            li 
+                span=book.title 
+                a(href="/books/" +book.id style="text-decoration: none")  &nbsp Update 
+                a(href="/books/" +book.id +"/delete" style="text-decoration: none") &nbsp Delete 
+
+    a(href="/books/create") 
+        button(class="btn btn-primary") Create New &nbsp
+    a(href="/")
+        button(class="btn btn-primary") Home

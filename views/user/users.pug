@@ -1,16 +1,19 @@
-h1 List of Member
-ul 
-    each user in users
-        li
-            span= user.name 
+extends ../Home.pug
 
-            a(href="/users/" +user.id  style="text-decoration: none") &nbsp; Update &nbsp;
-            a(href="/users/" +user.id +"/delete" style="text-decoration: none") Delete
+block content
+    h1 List of Member
+    ul 
+        each user in users
+            li
+                span= user.name 
 
-p Register new member ( click a button)
-a(href="/users/create")
-    button Register
+                a(href="/users/" +user.id  style="text-decoration: none") &nbsp; Update &nbsp;
+                a(href="/users/" +user.id +"/delete" style="text-decoration: none") Delete
+
+    p Register new member ( click a button)
+    a(href="/users/create")
+        button Register
 
 
-a(href="/")
-    button Home
+    a(href="/")
+        button Home

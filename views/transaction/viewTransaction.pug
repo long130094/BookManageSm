@@ -1,19 +1,21 @@
-h1 Transactions
-ul 
-    each list in lists
-        li  
-            span= list.userID +"-----"
-      
-            span= list.bookID
-form(action="/transactions/create", method="post")
-    label book &nbsp;
-    select(name="bookID") 
-        each book in books
-         option(value=book.id)= book.title
-    label Member &nbsp;
-    select(name="userID")
-        each user in users
-         option(value=user.id)= user.name
-    button Create
-a(href="/")
-    button Home
+extends ../Home.pug
+
+block content
+    h1 Transactions
+    ul 
+        each list in lists
+            li  
+             span= list.userID +"-----"
+             span= list.bookID
+    form(action="/transactions/create", method="post")
+        label book &nbsp;
+        select(name="bookID") 
+            each book in books
+                option(value=book.id)= book.title
+        label Member &nbsp;
+        select(name="userID")
+            each user in users
+                option(value=user.id)= user.name
+        button Create
+    a(href="/")
+        button Home
