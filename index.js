@@ -3,7 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port =  3000;
+const port = 3000;
+
 
 
 // PUG
@@ -17,6 +18,12 @@ const transaction = require('./routes/collection.route')
 app.get('/', (req, res) => {
     res.render("./Home")
 });
+// app.set('base','/index')
+//create favicon
+//app.use(favicon(__dirname + '/public/images/favicon.png'));
+// app.use(express.static(__dirname, 'views'));
+app.use(express.static('public'));
+
 //Books store - show all books
 app.use('/books',bookRoute)
 app.use('/users',userRoute)
