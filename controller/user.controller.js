@@ -12,7 +12,25 @@ module.exports.create = (req, res) => {
 
 module.exports.createPost =  (req, res) => {
     req.body.id = shortid.generate();
+    const errors = [];
+    if(!req.body.name){
+        errors.push('Name is required');
+        
+    }
+    if(!req.body.age){
+        errors.push('age is required');
+        
+    }
+    // console.log(req.body.age);
+    if(errors.length){
+        res.render('user/createUsers',{
+            errors: errors,
+            values: req.body
+        });
+        return
+    }
     db.get("users").push(req.body).write();
+
     res.redirect("/users");
 };
 module.exports.delete = (req, res) => {
