@@ -1,10 +1,14 @@
-h1 Add a book which you want
-form(action="/books/create", method="POST")
-    label title             
-    input(type="text", name="title")
-    br
-    br
-    label Description
-    input(type="text", name="des")
+extends ../Home.pug
 
-    button ADD
+block content
+ nav.container
+    h1 Add a book which you want
+    form(action="/books/create", method="POST")
+        label(for="title") Title             
+        input#title.form-control(type="text", name="title")
+        br
+        br
+        label(for="des") Description
+        input#des.form-control(type="text", name="des")
+
+        button(class="mt-2 btn btn-primary py-1 px-3 ") ADD

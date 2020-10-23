@@ -1,9 +1,13 @@
-h1 Update Description of book
+extends ../Home.pug
 
-p(Style="color:red") Old Description:  
-span= book.des
+block content
+ nav(class="ml-3")
+    h1 Update Description of book
 
-form(action="/books/"+ book.id +"/update", method="post")
-    label New Description  &nbsp;
-    input(type="text", name="des")  
-    button  &nbsp; UPDATE
+    p(Style="color:red") Old Description:  
+    span= book.des
+
+    form(action="/books/"+ book.id +"/update", method="post")
+        label New Description  &nbsp;
+        input(type="text", name="des")  
+        button(class="ml-2 btn btn-primary")  &nbsp; UPDATE

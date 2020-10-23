@@ -1,6 +1,7 @@
 extends ../Home.pug
 
 block content
+ nav(class="ml-4 mt-2")
     h1 Books store
     p   List of books
     ul
@@ -11,6 +12,6 @@ block content
                 a(href="/books/" +book.id +"/delete" style="text-decoration: none") &nbsp Delete 
 
     a(href="/books/create") 
-        button(class="btn btn-primary") Create New &nbsp
+        button(class="btn btn-primary mr-3") Create New &nbsp
     a(href="/")
         button(class="btn btn-primary") Home

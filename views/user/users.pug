@@ -1,6 +1,7 @@
 extends ../Home.pug
 
 block content
+ nav(class="ml-3 mt-2")
     h1 List of Member
     ul 
         each user in users
@@ -12,8 +13,8 @@ block content
 
     p Register new member ( click a button)
     a(href="/users/create")
-        button Register
+        button(class="btn btn-primary mr-2 ") Register
 
 
     a(href="/")
-        button Home
+        button(class="btn btn-primary mr-2") Home

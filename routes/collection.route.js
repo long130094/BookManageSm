@@ -6,9 +6,9 @@ const controller = require('../controller/collection.controller');
 const { route } = require('./book.route');
 const router = express.Router();
 
-router.get('/',controller.index)
-router.get('/create', controller.create)
+router.get('/',controller.index);
+router.get('/create', controller.create);
 //Create user rent book
-router.post('/create', controller.createPost)
-
+router.post('/create', controller.createPost);
+router.get('/:id/complete', controller.isComplete);
 module.exports = router;

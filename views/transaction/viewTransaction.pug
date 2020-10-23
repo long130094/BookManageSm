@@ -4,9 +4,16 @@ block content
     h1 Transactions
     ul 
         each list in lists
-            li  
+            li(class="m-2") 
              span= list.userID +"-----"
-             span= list.bookID
+             span= list.bookID +"-----"
+             span= list.isComplete
+             span 
+                if list.isComplete
+                    button(disabled class="btn btn-outline-success") Complete
+                else
+                    form(action="/transactions/" + list.id +"/complete", method="get")
+                        button(type="submit",class="btn btn-outline-secondary" ) Complete
     form(action="/transactions/create", method="post")
         label book &nbsp;
         select(name="bookID") 
@@ -16,6 +23,6 @@ block content
         select(name="userID")
             each user in users
                 option(value=user.id)= user.name
-        button Create
+        button(class="btn btn-primary ml-2") Create
     a(href="/")
-        button Home
+        button(class="btn btn-primary ml-2") Home
