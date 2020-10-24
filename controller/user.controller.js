@@ -1,5 +1,6 @@
 const shortid = require('shortid');
 const db = require('../db');
+const { read } = require('../db');
 
 module.exports.index = (req, res) => {
     res.render('user/users', {
@@ -17,11 +18,18 @@ module.exports.createPost =  (req, res) => {
         errors.push('Name is required');
         
     }
+    if(req.body.name.length>30){
+        errors.push('Name has 30 character maximum')
+    }
     if(!req.body.age){
         errors.push('age is required');
         
     }
-    // console.log(req.body.age);
+    //check number
+    if(isNaN(req.body.age)){
+        errors.push('fill the number');
+    }
+    console.log(isNaN(req.body.age));
     if(errors.length){
         res.render('user/createUsers',{
             errors: errors,
