@@ -1,20 +1,21 @@
 extends ../Home.pug
 
 block content
- nav(class="ml-3 mt-2")
-    h1 List of Member
-    ul 
+   .container
+    h1 
+        span Users
+        a(href="/users/create")
+            button(class="btn btn-primary ml-2 ") New
+    table.table
+        tr
+            th Name
+            th Age
+            th Actions
         each user in users
-            li
-                span= user.name 
+            tr 
+                td= user.name
+                td= user.age
+                td 
+                    a.btn.btn-light(href="/users/" +user.id , style="text-decoration: none")  Update 
+                    a.btn.btn-light.ml-2(href="/users/" +user.id +"/delete" style="text-decoration: none") Delete
 
-                a(href="/users/" +user.id  style="text-decoration: none") &nbsp; Update &nbsp;
-                a(href="/users/" +user.id +"/delete" style="text-decoration: none") Delete
-
-    p Register new member ( click a button)
-    a(href="/users/create")
-        button(class="btn btn-primary mr-2 ") Register
-
-
-    a(href="/")
-        button(class="btn btn-primary mr-2") Home

@@ -7,6 +7,6 @@ module.exports.countCookie = (req ,res , next) => {
     // console.log(req.session.views);
     db.update('count', n => n + 1).write()
     const count = db.get('count').value();
-    console.log('cookies', count);
+    // console.log('cookies', count);
     next();
 }

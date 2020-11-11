@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const countCookie = require('./middleware/countCookieMiddle');
 
+//midleware authentication
+const authMiddleware = require('./middleware/auth.middleware');
 
 const app = express();
 const port = 3000;
@@ -20,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const bookRoute = require('./routes/book.route')
 const userRoute = require('./routes/user.route')
 const transaction = require('./routes/collection.route');
+const auth = require('./routes/auth.route');
 const { signedCookie, JSONCookies } = require('cookie-parser');
 
 app.use(express.static('public'));
@@ -28,14 +31,14 @@ app.use(express.static('public'));
 app.use(countCookie.countCookie);
 
 app.get('/', (req, res) => {
-    res.cookie('user-id', 123456);
-    console.log('Cookies: ', req.cookies);
+    // res.cookie('user-id', 123456);
+    // console.log('Cookies: ', req.cookies);
     res.render('./Home')
 });
-app.use('/books',bookRoute)
-app.use('/users',userRoute)
-app.use('/transactions',transaction)
-
+app.use('/books', authMiddleware.requireAuth,bookRoute)
+app.use('/users',authMiddleware.requireAuth, userRoute)
+app.use('/transactions',authMiddleware.requireAuth,transaction)
+app.use('/auth',auth);
 // open port
 app.listen(port, () => {
     console.log(`Server started at http://localhost:${port}`);

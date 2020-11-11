@@ -1,12 +1,11 @@
 extends ../Home.pug
 
 block content
- nav.container
-    h1 Add a book which you want
+ .container
+    h1.text-center Add a book which you want
     form(action="/books/create", method="POST")
         label(for="title") Title             
         input#title.form-control(type="text", name="title")
-        br
         br
         label(for="des") Description
         input#des.form-control(type="text", name="des")
