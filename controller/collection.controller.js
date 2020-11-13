@@ -23,7 +23,7 @@ module.exports.createPost =  (req,res) => {
     db.get('Books').find({id: req.body.bookID}).assign({isComplete: req.body.isComplete}).write();
      // db.get("Books").push(req.body.isComplete).write();
     res.redirect('/transactions/create');
-    
+        
 }
 //True || False of Transactions
 module.exports.isComplete = (req,res) => { 
@@ -39,6 +39,7 @@ module.exports.isComplete = (req,res) => {
     }
     // db.get('Books').find({id: dbBook.id}).assign({isComplete: true}).write();
     // console.log(db.get('Books').find({id: }).assign({isComplete: true}).write());
+    console.log(idTransaction);
     
     res.redirect('/transactions/create');   
 
