@@ -39,7 +39,6 @@ module.exports.isComplete = (req,res) => {
     }
     // db.get('Books').find({id: dbBook.id}).assign({isComplete: true}).write();
     // console.log(db.get('Books').find({id: }).assign({isComplete: true}).write());
-    console.log(idTransaction);
     
     res.redirect('/transactions/create');   
 
